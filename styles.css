@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    background-color: lightgrey;
+    margin-left: 200px;
+}
+
+#sisukord {
+    background-color: grey;
+    width: 200px;
+    height: 100%;
+    margin-right: 10px;
+    position: fixed;
+}
+
+#ulejaanud_leht {
+    margin-left: 220px;
+    padding: 10px;
+}
