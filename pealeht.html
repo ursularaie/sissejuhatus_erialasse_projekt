@@ -16,7 +16,6 @@
     <!--Credit for favicon: https://www.flaticon.com/free-icons/skiing, Skiing icons created by Freepik - Flaticon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link rel="script" href="script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -29,7 +28,7 @@
           <a href="#elu" id="eluLink"><li>Elu</li></a>
           <a href="#muusika" id="muusikaLink"><li>Looming</li></a>
           <a href="#isiksus" id="isiksusLink"><li>Isiksus</li></a>
-          <a href="#funfacts" id="funfactsLink"><li>Fun Facts</li></a>
+          <a href="#funfacts" id="funfactsLink"><li>Huvitavad faktid</li></a>
         </ul> 
       </div>
       <div id="ulejaanud_leht">
@@ -39,13 +38,42 @@
           <img src="suvakas3.jpg" alt="pilt 2">
         </div>
         <div id="uleval_nuppud">
-          <button>Tee testi!</button>
-          <button>Arva laule!</button>
+          <a href='quiz.html'><button>Tee testi!</button></a>
+          <a href='lauluarvamine.html'><button>Arva laule!</button></a>
         </div>
         <div id="tekst">
           <div id="elu">
             <p id="eluPealkiri">Elu</p>
-            <p id="eluLoik">Esimene lõik. Siia tuleb sisu. Mingi tutvustav osa elust.</p>
+            <p id="eluLoik">
+              Nublu on Eesti muusikamaastiku kõige salapärasem ja vaieldamatult köitvaim fenomen – 
+              räppar, kes on suutnud hoida enda näo varjus, kuid vallutanud terve riigi südamed. 
+              Tema nutikad sõnamängud, jutustavad lood ning äratuntav stiil on teinud temast 
+              artisti, kelle muusika sobib igasse seltskonda ja keskkonda. Iga uus lugu muutub 
+              sündmuseks, iga koostöö üllatuseks. Kui tahad teada, kuidas nublu on muutnud Eesti 
+              muusikat ja miks temast räägitakse rohkem kui kellestki teisest – siis oled õiges 
+              kohas.<br><br>Nublu, kodanikunimega Markkus Pulk, sündis 26. juunil 1996 Keilas. 
+              Tema hariduskäik viis ta põhikooli astmes Tallinna Inglise Kolledži ning keskkooli 
+              aastad veetis ta Tallinna Vanalinna Hariduskolleegiumi teatriklassis. 2016. aastal 
+              astus ta Tartu Ülikool õppima ajakirjandust ja kommunikatsiooni, kuid otsustas 
+              olulisel hetkel muusikutee kasuks – ülikool jäi lõpetamata. Tema tõeline läbimurre 
+              toimus 2018. aastal singliga “Mina ka”, mis lennutas ta hetkega tippu ning sillutas 
+              tee hittide rajale, mida teab peaaegu iga eestlane peast laulda. Koostööd nagu 
+              “Universum” Soome superstaari Mikael Gabrieliga kinnitasid tema rahvusvahelist 
+              potentsiaali, jõudes mõlema maa Spotify edetabelite tippu. 2020. aastal ilmunud 
+              debüütalbum “Café Kosmos” tõi kuulajateni tervikliku maailmavaate – segu popkultuuri 
+              viidetest ja sügava tähendusega lüürikast.<br><br>Lisaks tema ainulaadsele helikeelele 
+              on nublu fenomen ka kultuuriline nähtus – ta on suutnud kõnetada põlvkondi ning tuua 
+              eesti keele räpi maailma viisil, mis tundub ühtaegu modernne ja sügavalt omane. Nublu 
+              pole kunagi järginud reegleid ega võtnud teisi artiste endale eeskujuks – ta on ise 
+              olnud teerajaja ning suudab endiselt iga enda uue lauluga üllatada - nii visuaali, 
+              teksti kui ka heliga. Tema sündmusterohke karjäär on muutnud ta üheks kõige mõjukamaks 
+              artistiks tänases Eesti muusikas, inspireerides nii kuulajaid kui ka teisi artiste 
+              mõtlema julgelt ja looma suurelt. Veelgi enam – iga uue projektiga seab ta lati 
+              kõrgemale, jättes õhku küsimuse: mis järgmine samm olla võiks?<br><br>Kui tahad 
+              mõista, kuidas üks noor artist muutus üheks mõjukaimaks tegelaseks Eesti muusikas, 
+              ning avastada lugusid ja hetki, mis on kujundanud nublu fenomeni, siis oled õiges 
+              kohas. Siit algab teekond, mis võib sind üllatada. 
+            </p>
             <div id="esimese_loigu_pildid">
               <img src="" alt="pilt 3">
               <img src="" alt="pilt 4">
@@ -120,31 +148,96 @@
             </div>
           </div>
           <div id="funfacts">
-            <p id="funfactsPealkiri">Fun Facts</p><!--mõni parem lõigu nimi äkki?-->
-            <p id="funfactsLoik">Neljas lõik. Siia tuleb sisu. Mingi fun facts.</p>
+            <p id="funfactsPealkiri">Huvitavad faktid</p><!--mõni parem lõigu nimi äkki?-->
+            <p id="funfactsLoik">
+              <ol id="funfactsList">
+                <li>
+                  Kõige rohkem ilmumise päeval kuulatud laul Eestis:<br>Räppar nublu ja laulja 
+                  maria kallastu lugu „Push It“ kuulati ilmumise päeval, 31. mail 
+                  voogedastusplatvormil Spotify 21 561 korda. See on uus tippmark, kuna ühtki 
+                  kohalikku laulu pole varem esimesel päeval Eestis registreeritud Spotify 
+                  kontodelt nii palju kordi veel kuulatud.<br><br>
+                </li>
+                <li>
+                  Meeldib oma lugusid jagada:<br>Nublu ütleb enda kohta, et talle meeldib oma 
+                  lugusid jagada ja arvab, et on elu võrdlemisi palju näinud. Samas meeldib 
+                  talle kuulda ka teiste seiklustest ja kogemustest.<br><br>
+                </li>
+                <li>
+                  Huvi olla kunstnik:<br>Väidetavalt kasutab ta Nublu brändi raha kogumiseks, et 
+                  siis hoopis kunstnikuks hakata.<br><br>
+                </li>
+                <li>
+                  Saare soetamine:<br>Aastal 2020 tegi nublu aga midagi ootamatut - nimelt ostis ta 
+                  endale Tallinna lähedale oma saare. Tegemist oli Harjumaal Kuusalu vallas 
+                  paikneva Väheloo saarega.Nublu visioon saarele ehitada teaduse- ja 
+                  kultuuriinkubaator paraku tema enda poolt ehitusse ei lähe, sest saar on 
+                  hetkeseisuga müügis. Nublu on ise andnud saarele võrdlemisi humoorika nime, 
+                  “Kurrunurruvuti”.<br><br>
+                </li>
+                <li>
+                  Sahinad, palju nublu esinemise eest raha küsib:<br>Aastal 2018 jõudsid Eesti 
+                  Ekspressi sahinad, et nublu ei esinenud toona ühel üritusel, kuna soovis 
+                  esinemise eest 15 000 eurot. Kas see vastab tõele, pole aga sugugi kindel.<br><br>
+                </li>
+                <li>
+                  Pojapoja edus kahtlev vanaisa:<br>Hoolimata nublu tänasest suurest edust on 
+                  vähemalt üks inimene, keda tema edu endiselt hämmastab – vanaisa Ats. Saates 
+                  „Öökülaline“ rääkis vanaisa otsekoheselt, et ei mõista siiani, kuidas pojapoeg 
+                  nii populaarseks on saanud. „Pidu saab ükskord läbi. Millega ta seda leiba 
+                  teenima hakkab?“ Vanaisa sõnul tekitab nublu edu temas siiani küsimusi ja 
+                  mõningast muret pojapoja tuleviku pärast.<br><br>
+                </li>
+                <li>
+                  Lavakasse mitte sisse saamine:<br>Üks eesmärk jäi muusikul aga siiski saavutamata 
+                  ning heal meelel ei räägi sellest kogemusest siiani kuigi pikalt. Nublu proovis 
+                  sisse astuda lavakasse, kuid sinna ta sisse ei saanud. “Hell teema, ma ei saanud 
+                  sisse. Seda talenti minus piisavalt ei olnudki,” tunnistab muusik.<br><br>
+                </li>
+                <li>
+                  Lemmik toit:<br>Nublu lemmik toit on ema valmistatud lasanje.<br><br>
+                </li>
+                <li>
+                  Nublu jättis Tartu Ülikooli pooleli:<br>2016. aastal alustas nublu õpinguid 
+                  Tartu Ülikoolis ajakirjanduse ja kommunikatsiooni erialal. Kui aga aastal 2019 
+                  pidanuks Pulk õpingud lõpetama, teda lõpetajate hulgas polnud.<br><br>
+                </li>
+                <li>
+                  Iluuisutajast õde:<br>Nublu õde on Eesti iluuisutaja Eva-Lotta Kiibus, kes 
+                  võistleb naiste üksiksõidus ja on kahekordne Eesti meister.
+                </li>
+              </ol>
+            </p>
             <div id="neljanda_loigu_pildid">
               <img src="snkt_kohver_as_nublu.jpg" alt="pilt 10" id="pilt10">
               <img src="" alt="pilt 11">
             </div>
           </div>
           <div id="alumised_nuppud">
-            <button>Tee testi!</button>
-            <button>Arva laule!</button>
+            <a href='quiz.html'><button>Tee testi!</button></a>
+            <a href='lauluarvamine.html'><button>Arva laule!</button></a>
           </div>
         </div>
       </div>
     </main>
     <footer>
-
-      <p id="footerLingid"><a href='https://www.allstarz.ee/vaata_artiste/632.html' class="footerLink">https://www.allstarz.ee/vaata_artiste/632.html</a> 19.11.2025<br>
+      <p id="footerLingid">Kasutatud allikad:<br><a href='https://www.allstarz.ee/vaata_artiste/632.html' class="footerLink">https://www.allstarz.ee/vaata_artiste/632.html</a> 19.11.2025<br>
         <a href='https://kultuur.err.ee/850111/daniel-tamm-miks-nublu-mojub' class="footerLink">https://kultuur.err.ee/850111/daniel-tamm-miks-nublu-mojub</a> 19.11.2025<br>
         <a href='https://www.sirp.ee/nublu-ja-eesti-rapi-pehme-kohualune/' class="footerLink">https://www.sirp.ee/nublu-ja-eesti-rapi-pehme-kohualune/</a> 19.11.2025<br>
         <a href='https://genius.com/Nublu-chiri-biri-binn-lyrics' class="footerLink">https://genius.com/Nublu-chiri-biri-binn-lyrics</a> 19.11.2025<br>
         <a href='https://sky.ee/skyplus/reket-raakis-saladuse-valja-nuud-teame-miks-nublu-oma-nagu-varjab?utm_source=chatgpt.com' class="footerLink">https://sky.ee/skyplus/reket-raakis-saladuse-valja-nuud-teame-miks-nublu-oma-nagu-varjab?</a>7.11.2025<br>
         <a href='https://www.tv3.ee/3-portaal/seltskond/nublu-intervjuus-asjad-pole-alati-nii-nagu-naivad/' class="footerLink">https://www.tv3.ee/3-portaal/seltskond/nublu-intervjuus-asjad-pole-alati-nii-nagu-naivad/</a>7.11.2025<br>
         <a href='https://sky.ee/haruldane-intervjuu-nubluga-miks-muusik-ootamatult-sulle-sadanud-edu-valguses-soprade-peale?utm_source=chatgpt.com' class="footerLink">https://sky.ee/haruldane-intervjuu-nubluga-miks-muusik-ootamatult-sulle-sadanud-edu-valguses-soprade-peale?</a>7.11.2025<br>
-
+        <a href='https://ekspress.delfi.ee/artikkel/120298047/nublu-uus-laul-tegi-spotifys-rekordi' class="footerLink">https://ekspress.delfi.ee/artikkel/120298047/nublu-uus-laul-tegi-spotifys-rekordi</a>
+        <a href='https://www.ohtuleht.ee/melu/894649/nublut-on-mitu-ehk-kuumimad-kolakad-salaparase-mominarappari-kohta' class="footerLink">https://www.ohtuleht.ee/melu/894649/nublut-on-mitu-ehk-kuumimad-kolakad-salaparase-mominarappari-kohta</a>
+        <a href='https://ekspress.delfi.ee/artikkel/84236399/sahinad-nublu-soovis-esinemise-eest-15-000-eurot' class="footerLink">https://ekspress.delfi.ee/artikkel/84236399/sahinad-nublu-soovis-esinemise-eest-15-000-eurot</a>
+        <a href='https://sky.ee/palju-onne-nublik-5-vahetuntud-fakti-eesti-noutuima-rappari-kohta' class="footerLink">https://sky.ee/palju-onne-nublik-5-vahetuntud-fakti-eesti-noutuima-rappari-kohta</a>
+        <a href='https://sky.ee/palju-onne-nublik-5-vahetuntud-fakti-eesti-noutuima-rappari-kohta' class="footerLink">https://sky.ee/palju-onne-nublik-5-vahetuntud-fakti-eesti-noutuima-rappari-kohta</a>
+        <a href='https://sky.ee/palju-onne-nublik-5-vahetuntud-fakti-eesti-noutuima-rappari-kohta' class="footerLink">https://sky.ee/palju-onne-nublik-5-vahetuntud-fakti-eesti-noutuima-rappari-kohta</a>
+        <a href='https://www.tv3.ee/3-portaal/muusika/palju-onne-5-ponevat-fakti-sunnipaevalaps-nublu-kohta/' class="footerLink">https://www.tv3.ee/3-portaal/muusika/palju-onne-5-ponevat-fakti-sunnipaevalaps-nublu-kohta/</a>
+        <a href='https://et.wikipedia.org/wiki/Eva-Lotta_Kiibus' class="footerLink">https://et.wikipedia.org/wiki/Eva-Lotta_Kiibus</a>
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

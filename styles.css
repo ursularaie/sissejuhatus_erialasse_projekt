@@ -12,7 +12,7 @@ main {
 }
 
 footer {
-    background-color: #6F1A07;
+    background-color: #F15BB5;
     margin-left: 190px;
     margin-top: 0px;
     padding-left: 10px;
@@ -219,6 +219,13 @@ img {
 }
 
     color: white;
+}
+
+#funfactsList {
+    color: #64E9EE;
+    text-shadow: 1px 1px #ffffff;
+    font-size: 20px;
+    margin-bottom: 40px;
 }
 
 #pilt10 {
