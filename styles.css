@@ -221,6 +221,14 @@ img {
     color: white;
 }
 
+#pilt8 {
+    width: 200px;
+}
+
+#pilt9 {
+    height: 298.483px;
+}
+
 #funfactsList {
     color: #64E9EE;
     text-shadow: 1px 1px #ffffff;
@@ -231,6 +239,12 @@ img {
 #pilt10 {
     margin-bottom: 40px;
     color: white;
+}
+
+#pilt11 {
+    margin-bottom: 40px;
+    margin-left: 60px;
+    height: 183px;
 }
 
 #footerLingid {
