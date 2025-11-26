@@ -114,19 +114,6 @@ img {
     margin-bottom: 25px;
 }
 
-.alusta-nupp {
-    display: block;
-    margin: 0 auto 40px;
-    padding: 12px 30px;
-    font-size: 18px;
-    border-radius: 0;
-    background-color: #F15BB5;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-family: "Orbitron", sans-serif;
-}
-
 .kusimused {
     display: flex;
     flex-direction: column;
