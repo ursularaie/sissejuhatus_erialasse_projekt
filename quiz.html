@@ -7,7 +7,6 @@
     <title>Nublu quiz</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="script" href="script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -21,6 +20,7 @@
     <div style="width:200px; height:4px; background-color:#FEE440; margin:10px auto;"></div>
 </div>
 
+<!-- KÕIK KÜSIMUSED -->
 <div class="mangu-konteiner">
     <div class="kusimused">
 
@@ -206,9 +206,11 @@
 
         <!-- TAGASI -->
         <div style="text-align:center; margin-top:40px; margin-bottom:50px;">
-            <a href="pealeht.html">
-                <button style="padding:15px 35px; font-size:22px;">Tagasi avalehele</button>
-            </a>
+            <button
+                style="padding:15px 35px; font-size:22px; background-color:#F15BB5; color:white; border:none; cursor:pointer;"
+                onclick="window.location.href='pealeht.html'">
+                Tagasi avalehele
+            </button>
         </div>
 
     </div>
@@ -216,3 +218,4 @@
 
 </body>
 </html>
+
