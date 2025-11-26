@@ -179,6 +179,13 @@ img {
     width: 100%;
 }
 
+.vastuse-kast.selected {
+    background-color: #d3be36;
+    border-color: #d3be33;
+    text-shadow: 2px 2px #d0d0d0;
+    cursor: pointer;
+}
+
 .tulemus-kast {
     margin-top: 50px;
     background-color: #FEE440;

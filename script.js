@@ -2,50 +2,80 @@
 //lisa lõpptulemuste kast, kui kõik küsimused on vastatud ja vajutatkse vastavat nuppu
 //15 laulu, valib iga küsimuse jaoks suvakjalt ühe kolmest, mis on seal vastuses
 //lauluarvamine näitab tulemust, kui kõik küsimused vastatud.
-let check1 = document.getElementById("kontroll-nupp-1")
-let check2 = document.getElementById("kontroll-nupp-2")
-let check3 = document.getElementById("kontroll-nupp-3")
-let check4 = document.getElementById("kontroll-nupp-4")
-let check5 = document.getElementById("kontroll-nupp-5")
-let check6 = document.getElementById("kontroll-nupp-6")
-let check7 = document.getElementById("kontroll-nupp-7")
-let check8 = document.getElementById("kontroll-nupp-8")
-let check9 = document.getElementById("kontroll-nupp-9")
-let check10 = document.getElementById("kontroll-nupp-10")
-let check11 = document.getElementById("kontroll-nupp-11")
-let check12 = document.getElementById("kontroll-nupp-12")
 
-let rightAnswerSelected = false;
+let quizPoints = 0;
 
-function tryAgain(answerBox, buttonName) {
-    buttonName.innerHTML = "Kontrolli";
-    document.getElementById(answerBox).innerHTML = "";
-    buttonName.onclick = () => Check(answerBox, buttonName);
+function showResults() {
+    let butRes = document.createElement("button");//nupp, mis tekib, kui kõigile küsimustele on midagi vastatud
+    butRes.innerHTML = "Vaata tulemust"; 
+    butRes.style.padding = "15px 35px";
+    butRes.style.fontSize = "22px";
+    butRes.style.border = "none";
+    butRes.style.cursor = "pointer";
+    let resBox = document.querySelector(".tulemuse-kast");
+    if (resBox.childElementCount > 0) { //kui tulemuse kastis on juba lapsi, siis ei tee midagi
+        return;
+    }
+    resBox.appendChild(butRes);
+    butRes.onclick = (event) => { // arrow function
+        console.log(event);
+        resBox.removeChild(butRes);//võtab ära nuppu ja asendab teksti kastiga, mis ütleb tulemuse
+        let resText = document.createElement("p");
+        resText.innerHTML = quizPoints + " / 12";
+        resText.style.fontSize = "22px";
+        resText.style.height = '27.3333px';
+        resText.style.paddingLeft = '35px';
+        resText.style.paddingRight = '35px';
+        resText.style.paddingTop = '15px';
+        resText.style.paddingBottom = '15px';
+        resText.style.backgroundColor = "#FEE440";
+        resBox.appendChild(resText);
+    };}
+
+function startState(index, valik) {
+    let nupp = document.getElementById("nupp-" + index)
+    nupp.innerHTML = "Kontrolli";//kontrolli nupp
+    document.getElementById("vastus-" + index).innerHTML = "";//tühjendab vastuse kasti
+    valik.classList.remove('selected');//eemaldab valikust selected klassi
+    nupp.onclick = () => checkAnswer(index);//paneb nuppu uuesti onclick kuulari, mis käivitab kontrolli funktsiooni
 }
 
-function Check(answerBox, buttonName) {
-    console.log(rightAnswerSelected);
-    if (rightAnswerSelected) {
-        document.getElementById(answerBox).innerHTML = "Õige vastus!";
-        rightAnswerSelected = false;
-    }
-    else {
-        document.getElementById(answerBox).innerHTML = "Vale vastus. Proovi uuesti!";
-        buttonName.innerHTML = "Proovi uuesti";
-        buttonName.onclick = () => tryAgain(answerBox, buttonName);
-    }
-    console.log(rightAnswerSelected);
-};
+function selectAnswer(event) {
+    event.target.parentElement.querySelectorAll('.vastuse-kast').forEach((btn) => {//vaatab läbi kõik vajutatud nuppu vanem elemendi lapsed ja võtab kõigilt klassi selected ära
+        btn.classList.remove('selected');
+    });
+    event.target.classList.add('selected');//lisab vajutatud nupule klassi selected
+}
+document.querySelectorAll('.vastuse-kast').forEach((btn) => {//vaatab läbi kõik klassi nuppud ja paneb neile kuulari, millega kutsuda välja funktsioon
+    btn.onclick = selectAnswer;
+});
 
-check1.onclick = () => Check('vastus1', check1)
-check2.onclick = () => Check('vastus2', check2)
-check3.onclick = () => Check('vastus3', check3)
-check4.onclick = () => Check('vastus4', check4)
-check5.onclick = () => Check('vastus5', check5)
-check6.onclick = () => Check('vastus6', check6)
-check7.onclick = () => Check('vastus7', check7)
-check8.onclick = () => Check('vastus8', check8)
-check9.onclick = () => Check('vastus9', check9)
-check10.onclick = () => Check('vastus10', check10)
-check11.onclick = () => Check('vastus11', check11)
-check12.onclick = () => Check('vastus12', check12)
+let correctAnswers = ["Markkus Pulk", "26. juuni 1996", "Keilas", 
+                    "Tallinna Vanalinna Hariduskolleegium", "Ajakirjandus ja kommunikatsioon",
+                    "Mina Ka", "Push It", "Mikael Gabriel", "Paisati müüki", "Kurrunurruvuti",
+                    "Ema tehtud lasanje", "Vanaisa"];//õiged vastused
+
+function checkAnswer(index) {
+    let nupp = document.getElementById("nupp-" + index);//kontrolli nupp
+    let vastus = document.getElementById("vastus-" + index);//siia kasti tuleb vastuse bool
+    let valik = nupp.parentElement.querySelector('.vastuse-kast.selected');//see vaatab, et mingi valik oleks tehtud
+    if (!valik) {
+        vastus.innerText = "Palun vali vastus!";
+        return;
+    }
+    if (valik.innerHTML === correctAnswers[index-1]) { //võrdleb õigete vastuste järjendit kohal, kus on küsimus valiku sisemise htmli'ga
+        vastus.innerText = "Õige vastus!";
+        quizPoints += 1;
+        if (index == 12) {
+            showResults();
+        }
+        return;
+    }
+    vastus.innerText = "Vale vastus!";
+    nupp.innerHTML = "Proovi uuesti";
+    nupp.onclick = () => startState(index, valik);
+    showResults();
+}
+for (let index = 1; index <= 12; index++) {
+    document.getElementById("nupp-" + index).onclick = () => checkAnswer(index);
+} //for loop, mis lisab kõigile kontrolli nuppudele onclick kuulari ja käivitab nuppu vajutusel funktsiooni andes kaasa indexi
