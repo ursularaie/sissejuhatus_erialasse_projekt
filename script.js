@@ -2,8 +2,15 @@
 //lisa lõpptulemuste kast, kui kõik küsimused on vastatud ja vajutatkse vastavat nuppu
 //15 laulu, valib iga küsimuse jaoks suvakjalt ühe kolmest, mis on seal vastuses
 //lauluarvamine näitab tulemust, kui kõik küsimused vastatud.
+//https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
 
 let quizPoints = 0;
+let songGuessPoints = 0;
+let songsQ1 = ['nublu - 1-2.mp3', 'nublu - ära ärata.mp3', 'nublu - barranco.mp3']
+let songsQ2 = ['nublu - croissantid.mp3', 'nublu - heikki.mp3', 'nublu - MINA KA feat. reket.mp3']
+let songsQ3 = ['nublu - öölaps!.mp3', 'nublu - peagi saabun....mp3', 'nublu - push it feat. maria kallastu.mp3']
+let songsQ4 = ['nublu - tmt.mp3', 'nublu & Vaiko Eplik - LAUSU TOTT.mp3', 'nublu x gameboy tetris - für Oksana.mp3']
+let songsQ5 = ['nublu x Mikael Gabriel - Universum.mp3', 'trammipark!!.mp3', 'duubel5-v2.mp3.mp3']
 
 function showResults() {
     let butRes = document.createElement("button");//nupp, mis tekib, kui kõigile küsimustele on midagi vastatud
@@ -32,7 +39,7 @@ function showResults() {
         resBox.appendChild(resText);
     };}
 
-function startState(index, valik) {
+function startStateQuizQuestion(index, valik) {
     let nupp = document.getElementById("nupp-" + index)
     nupp.innerHTML = "Kontrolli";//kontrolli nupp
     document.getElementById("vastus-" + index).innerHTML = "";//tühjendab vastuse kasti
@@ -73,7 +80,7 @@ function checkAnswer(index) {
     }
     vastus.innerText = "Vale vastus!";
     nupp.innerHTML = "Proovi uuesti";
-    nupp.onclick = () => startState(index, valik);
+    nupp.onclick = () => startStateQuizQuestion(index, valik);
     showResults();
 }
 for (let index = 1; index <= 12; index++) {
