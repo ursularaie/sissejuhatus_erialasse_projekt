@@ -2,15 +2,21 @@
 //lisa lõpptulemuste kast, kui kõik küsimused on vastatud ja vajutatkse vastavat nuppu
 //15 laulu, valib iga küsimuse jaoks suvakjalt ühe kolmest, mis on seal vastuses
 //lauluarvamine näitab tulemust, kui kõik küsimused vastatud.
-//https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
 
 let quizPoints = 0;
 let songGuessPoints = 0;
-let songsQ1 = ['nublu - 1-2.mp3', 'nublu - ära ärata.mp3', 'nublu - barranco.mp3']
-let songsQ2 = ['nublu - croissantid.mp3', 'nublu - heikki.mp3', 'nublu - MINA KA feat. reket.mp3']
-let songsQ3 = ['nublu - öölaps!.mp3', 'nublu - peagi saabun....mp3', 'nublu - push it feat. maria kallastu.mp3']
-let songsQ4 = ['nublu - tmt.mp3', 'nublu & Vaiko Eplik - LAUSU TOTT.mp3', 'nublu x gameboy tetris - für Oksana.mp3']
-let songsQ5 = ['nublu x Mikael Gabriel - Universum.mp3', 'trammipark!!.mp3', 'duubel5-v2.mp3.mp3']
+const songsQ = {1: ['1-2.mp3', 'ära ärata.mp3', 'barranco.mp3'],
+2: ['Croissantid.mp3', 'heikki.mp3', 'MINA KA.mp3'],
+3: ['öölaps.mp3', 'peagi saabun....mp3', 'push it.mp3'],
+4: ['tmt.mp3', 'LAUSU TÕTT.mp3', 'für Oksana.mp3'],
+5: ['Universum.mp3', 'trammipark!!.mp3', 'duubel5-v2.mp3.mp3']
+};
+
+let song1 = songsQ[1][Math.floor(Math.random() * 3)];//esimene laul randomiga
+let song2 = songsQ[2][Math.floor(Math.random() * 3)];//teine laul randomiga
+let song3 = songsQ[3][Math.floor(Math.random() * 3)];//kolmas laul randomiga
+let song4 = songsQ[4][Math.floor(Math.random() * 3)];//neljas laul randomiga
+let song5 = songsQ[5][Math.floor(Math.random() * 3)];//viies laul randomiga
 
 function showResults() {
     let butRes = document.createElement("button");//nupp, mis tekib, kui kõigile küsimustele on midagi vastatud
@@ -47,11 +53,37 @@ function startStateQuizQuestion(index, valik) {
     nupp.onclick = () => checkAnswer(index);//paneb nuppu uuesti onclick kuulari, mis käivitab kontrolli funktsiooni
 }
 
+function loeLauluarvamisePunkte(songGuessPoints, answer) {
+    console.log(answer.innerHTML);
+    if (song1.includes(answer.innerHTML)) {
+        songGuessPoints += 1;
+    }
+    else if (song2.includes(answer.innerHTML)) {
+        songGuessPoints += 1;
+    }
+    else if (song3.includes(answer.innerHTML)) {
+        songGuessPoints += 1;
+    }
+    else if (song4.includes(answer.innerHTML)) {
+        songGuessPoints += 1;
+    }
+    else if (song5.includes(answer.innerHTML)) {
+        songGuessPoints += 1;
+    }
+    else {
+        songGuessPoints += -1;
+    }
+    return songGuessPoints;
+}
+
 function selectAnswer(event) {
     event.target.parentElement.querySelectorAll('.vastuse-kast').forEach((btn) => {//vaatab läbi kõik vajutatud nuppu vanem elemendi lapsed ja võtab kõigilt klassi selected ära
         btn.classList.remove('selected');
     });
     event.target.classList.add('selected');//lisab vajutatud nupule klassi selected
+    if (page === 'lauluarvamine') {
+        songGuessPoints = loeLauluarvamisePunkte(songGuessPoints, event.target);
+    }
 }
 document.querySelectorAll('.vastuse-kast').forEach((btn) => {//vaatab läbi kõik klassi nuppud ja paneb neile kuulari, millega kutsuda välja funktsioon
     btn.onclick = selectAnswer;
@@ -83,6 +115,42 @@ function checkAnswer(index) {
     nupp.onclick = () => startStateQuizQuestion(index, valik);
     showResults();
 }
-for (let index = 1; index <= 12; index++) {
-    document.getElementById("nupp-" + index).onclick = () => checkAnswer(index);
-} //for loop, mis lisab kõigile kontrolli nuppudele onclick kuulari ja käivitab nuppu vajutusel funktsiooni andes kaasa indexi
+
+function playAudio(i, song) {
+    let audioElement = document.getElementById(i + "laul"); //võtab õige audio elemendi
+    audioElement.src = song; // annab audio elemendile õige laulu
+    audioElement.play(); // mängib laulu
+}
+
+let page = document.body.id;
+
+if (page === "quiz") {
+    for (let index = 1; index <= 12; index++) {
+        document.getElementById("nupp-" + index).onclick = () => checkAnswer(index);
+    } //for loop, mis lisab kõigile kontrolli nuppudele onclick kuulari ja käivitab nuppu vajutusel funktsiooni andes kaasa indexi
+}
+
+else if (page === "lauluarvamine") {
+    //heli nupud
+    for (let i=1; i<=5; i++) {//väsisin ära nii et siin on lollid lihtsad lahendused
+        if (i === 1) {
+            document.getElementById('heli-nupp-' + i).onclick = () => playAudio(i, song1);//paneb kõigile heli nuppudele onclick event handeleri ja kutsuba välja funktsiooni kui nuppu vajutatakse
+        }
+        else if (i === 2) {
+            document.getElementById('heli-nupp-' + i).onclick = () => playAudio(i, song2);//paneb kõigile heli nuppudele onclick event handeleri ja kutsuba välja funktsiooni kui nuppu vajutatakse
+        }
+        else if (i === 3) {
+            document.getElementById('heli-nupp-' + i).onclick = () => playAudio(i, song3);//paneb kõigile heli nuppudele onclick event handeleri ja kutsuba välja funktsiooni kui nuppu vajutatakse
+        }
+        else if (i === 4) {
+            document.getElementById('heli-nupp-' + i).onclick = () => playAudio(i, song4);//paneb kõigile heli nuppudele onclick event handeleri ja kutsuba välja funktsiooni kui nuppu vajutatakse
+        }
+        else if (i === 5) {
+            document.getElementById('heli-nupp-' + i).onclick = () => playAudio(i, song5);//paneb kõigile heli nuppudele onclick event handeleri ja kutsuba välja funktsiooni kui nuppu vajutatakse
+        }
+    }
+    let tulemuseKoht = document.querySelector('.tulemus-kast')
+    tulemuseKoht.onclick = () => {
+        tulemuseKoht.innerHTML = "Sinu tulemus on: " + songGuessPoints + " / 5";
+    }
+}

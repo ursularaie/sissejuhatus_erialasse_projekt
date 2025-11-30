@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body id="lauluarvamine">
     <main>
         <h1>Nublu laulu arvamise mäng</h1>
     </main>
@@ -31,23 +31,15 @@
             <div class="kusimus-number">1.</div>
             <div class="kusimus-kast">
                 <div class="heli-rida">
-                    <button class="heli-nupp">🔊</button>
+                    <button class="heli-nupp" id="heli-nupp-1">🔊</button>
                     <span>Kuula lõiku</span>
+                    <audio id="1laul"><source src="" type="audio/mpeg"></source></audio>
                 </div>
 
                 <div class="vastused">
-                    <label>
-                        <input type="radio" name="q1">
-                        <span class="vastuse-kast">1-2</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="q1">
-                        <span class="vastuse-kast">ära ärata</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="q1">
-                        <span class="vastuse-kast">barranco</span>
-                    </label>
+                    <button class="vastuse-kast">1-2</button><!--muutsin selliseks, sest siis töötab see samamoodi nagu quiz leht ja ei pea hakkama midagi uut välja mõtlema ja leht näeb ühtlane välja ka-->
+                    <button class="vastuse-kast">ära ärata</button>
+                    <button class="vastuse-kast">barranco</button>
                 </div>
             </div>
         </div>
@@ -56,12 +48,14 @@
             <div class="kusimus-number">2.</div>
             <div class="kusimus-kast">
                 <div class="heli-rida">
-                    <button class="heli-nupp">🔊</button>
+                    <button class="heli-nupp" id="heli-nupp-2">🔊</button>
+                    <span>Kuula lõiku</span>
+                    <audio id="2laul"><source src="" type="audio/mpeg"></source></audio>
                 </div>
                 <div class="vastused">
-                    <label><input type="radio" name="q2"><span class="vastuse-kast">Croissantid</span></label>
-                    <label><input type="radio" name="q2"><span class="vastuse-kast">heikki??</span></label>
-                    <label><input type="radio" name="q2"><span class="vastuse-kast">MINA KA</span></label>
+                    <button class="vastuse-kast">Croissantid</button>
+                    <button class="vastuse-kast">heikki??</button>
+                    <button class="vastuse-kast">MINA KA</button>
                 </div>
             </div>
         </div>
@@ -70,12 +64,14 @@
             <div class="kusimus-number">3.</div>
             <div class="kusimus-kast">
                 <div class="heli-rida">
-                    <button class="heli-nupp">🔊</button>
+                    <button class="heli-nupp" id="heli-nupp-3">🔊</button>
+                    <span>Kuula lõiku</span>
+                    <audio id="3laul"><source src="" type="audio/mpeg"></source></audio>
                 </div>
                 <div class="vastused">
-                    <label><input type="radio" name="q3"><span class="vastuse-kast">öölaps!</span></label>
-                    <label><input type="radio" name="q3"><span class="vastuse-kast">peagi saabun...</span></label>
-                    <label><input type="radio" name="q3"><span class="vastuse-kast">push it</span></label>
+                    <button class="vastuse-kast">öölaps!</button>
+                    <button class="vastuse-kast">peagi saabun...</button>
+                    <button class="vastuse-kast">push it</button>
                 </div>
             </div>
         </div>
@@ -84,12 +80,14 @@
             <div class="kusimus-number">4.</div>
             <div class="kusimus-kast">
                 <div class="heli-rida">
-                    <button class="heli-nupp">🔊</button>
+                    <button class="heli-nupp" id="heli-nupp-4">🔊</button>
+                    <span>Kuula lõiku</span>
+                    <audio id="4laul"><source src="" type="audio/mpeg"></source></audio>
                 </div>
                 <div class="vastused">
-                    <label><input type="radio" name="q4"><span class="vastuse-kast">tmt</span></label>
-                    <label><input type="radio" name="q4"><span class="vastuse-kast">LAUSUS TÕTT</span></label>
-                    <label><input type="radio" name="q4"><span class="vastuse-kast">für Oksana</span></label>
+                    <button class="vastuse-kast">tmt</button>
+                    <button class="vastuse-kast">LAUSUS TÕTT</button>
+                    <button class="vastuse-kast">für Oksana</button>
                 </div>
             </div>
         </div>
@@ -98,12 +96,14 @@
             <div class="kusimus-number">5.</div>
             <div class="kusimus-kast">
                 <div class="heli-rida">
-                    <button class="heli-nupp">🔊</button>
+                    <button class="heli-nupp" id="heli-nupp-5">🔊</button>
+                    <span>Kuula lõiku</span>
+                    <audio id="5laul"><source src="" type="audio/mpeg"></source></audio>
                 </div>
                 <div class="vastused">
-                    <label><input type="radio" name="q5"><span class="vastuse-kast">Universum</span></label>
-                    <label><input type="radio" name="q5"><span class="vastuse-kast">trammipark!!</span></label>
-                    <label><input type="radio" name="q5"><span class="vastuse-kast">duubel5-v2.mp3</span></label>
+                    <button class="vastuse-kast">Universum</button>
+                    <button class="vastuse-kast">trammipark!!</button>
+                    <button class="vastuse-kast">duubel5-v2.mp3</button>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
     </div>
 
     <div class="tulemus-kast">
-        (Tulemus)
+        Näita tulemust!
     </div>
 
     <div class="alumise-nupud">
