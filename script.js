@@ -7,7 +7,7 @@ let quizPoints = 0;
 let songGuessPoints = 0;
 const songsQ = {1: ['1-2.mp3', 'ära ärata.mp3', 'barranco.mp3'],
 2: ['Croissantid.mp3', 'heikki.mp3', 'MINA KA.mp3'],
-3: ['öölaps.mp3', 'peagi saabun....mp3', 'push it.mp3'],
+3: ['öölaps!.mp3', 'peagi saabun....mp3', 'push it.mp3'],
 4: ['tmt.mp3', 'LAUSU TÕTT.mp3', 'für Oksana.mp3'],
 5: ['Universum.mp3', 'trammipark!!.mp3', 'duubel5-v2.mp3.mp3']
 };
@@ -17,6 +17,14 @@ let song2 = songsQ[2][Math.floor(Math.random() * 3)];//teine laul randomiga
 let song3 = songsQ[3][Math.floor(Math.random() * 3)];//kolmas laul randomiga
 let song4 = songsQ[4][Math.floor(Math.random() * 3)];//neljas laul randomiga
 let song5 = songsQ[5][Math.floor(Math.random() * 3)];//viies laul randomiga
+
+console.log(song1, song2, song3, song4, song5);
+
+let q1Answered = false;
+let q2Answered = false;
+let q3Answered = false;
+let q4Answered = false;
+let q5Answered = false;
 
 function showResults() {
     let butRes = document.createElement("button");//nupp, mis tekib, kui kõigile küsimustele on midagi vastatud
@@ -53,26 +61,8 @@ function startStateQuizQuestion(index, valik) {
     nupp.onclick = () => checkAnswer(index);//paneb nuppu uuesti onclick kuulari, mis käivitab kontrolli funktsiooni
 }
 
-function loeLauluarvamisePunkte(songGuessPoints, answer) {
-    console.log(answer.innerHTML);
-    if (song1.includes(answer.innerHTML)) {
-        songGuessPoints += 1;
-    }
-    else if (song2.includes(answer.innerHTML)) {
-        songGuessPoints += 1;
-    }
-    else if (song3.includes(answer.innerHTML)) {
-        songGuessPoints += 1;
-    }
-    else if (song4.includes(answer.innerHTML)) {
-        songGuessPoints += 1;
-    }
-    else if (song5.includes(answer.innerHTML)) {
-        songGuessPoints += 1;
-    }
-    else {
-        songGuessPoints += -1;
-    }
+function loeLauluarvamisePunkte(songGuessPoints) {
+    songGuessPoints += 1;
     return songGuessPoints;
 }
 
@@ -81,8 +71,71 @@ function selectAnswer(event) {
         btn.classList.remove('selected');
     });
     event.target.classList.add('selected');//lisab vajutatud nupule klassi selected
-    if (page === 'lauluarvamine') {
-        songGuessPoints = loeLauluarvamisePunkte(songGuessPoints, event.target);
+    if (page === 'lauluarvamine') {//ainult kui on lauluarvamise lehel kontrollib seda
+        if (song1.startsWith(event.target.innerHTML)) {//ei suutnud välja mõelda, kuidas seda hea oleks teha funktsioonina, nii et praegu jääb terve lauluarvamise tulemuste kontroll siia
+            songGuessPoints = loeLauluarvamisePunkte(songGuessPoints);
+            q1Answered = true;
+        }
+        else if (song2.startsWith(event.target.innerHTML.replace(/\W+$/, ''))) {
+            songGuessPoints = loeLauluarvamisePunkte(songGuessPoints);
+            q2Answered = true;
+        }
+        else if (song3.startsWith(event.target.innerHTML)) {
+           songGuessPoints = loeLauluarvamisePunkte(songGuessPoints);
+           q3Answered = true;
+        }
+        else if (song4.startsWith(event.target.innerHTML)) {
+            songGuessPoints = loeLauluarvamisePunkte(songGuessPoints);
+            q4Answered = true;
+        }
+        else if (song5.startsWith(event.target.innerHTML)) {
+            songGuessPoints = loeLauluarvamisePunkte(songGuessPoints);
+            q5Answered = true;
+        }
+        else {
+            for (i in songsQ) {
+                if (i == 1) {
+                    for (j in songsQ[i]) {
+                        if (songsQ[i][j].includes(event.target.innerHTML)) {
+                            q1Answered = false;
+                            songGuessPoints += -1;
+                        }
+                    }
+                }
+                else if (i == 2) {
+                    for (j in songsQ[i]) {
+                        if (songsQ[i][j].includes(event.target.innerHTML)) {
+                            q2Answered = false;
+                            songGuessPoints += -1;
+                        }
+                    }
+                }
+                else if (i == 3) {
+                    for (j in songsQ[i]) {
+                        if (songsQ[i][j].includes(event.target.innerHTML)) {
+                            q3Answered = false;
+                            songGuessPoints += -1;
+                        }
+                    }
+                }
+                else if (i == 4) {
+                    for (j in songsQ[i]) {
+                        if (songsQ[i][j].includes(event.target.innerHTML)) {
+                            q4Answered = false;
+                            songGuessPoints += -1;
+                        }
+                    }
+                }
+                else if (i == 5) {
+                    for (j in songsQ[i]) {
+                        if (songsQ[i][j].includes(event.target.innerHTML)) {
+                            q5Answered = false;
+                            songGuessPoints += -1;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 document.querySelectorAll('.vastuse-kast').forEach((btn) => {//vaatab läbi kõik klassi nuppud ja paneb neile kuulari, millega kutsuda välja funktsioon
