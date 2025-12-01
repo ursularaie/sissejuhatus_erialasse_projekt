@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nublu quiz</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href ="quiz.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +16,9 @@
 <body id="quiz">
 
 <!-- PEALKIRI -->
-<div style="background-color:black; padding:30px 0; width:100%; text-align:center;">
-    <h1 style="margin:0; color:#64E9EE; text-shadow:2px 2px #ffffff;">Nublu quiz!</h1>
-    <div style="width:200px; height:4px; background-color:#FEE440; margin:10px auto;"></div>
+<div class ="quiz-header">
+    <h1 class="quiz-title">Nublu quiz!</h1>
+    <div class="title-line"></div>
 </div>
 
 <!-- KÕIK KÜSIMUSED -->
@@ -35,7 +36,7 @@
                     <button class="vastuse-kast">Markkus Pulk</button>
                     <button class="vastuse-kast">Mikk Pulk</button>
                 </div>
-                <div><p id="vastus-1" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-1" class="vastuse-tekst"></p></div>
                 <button id="nupp-1">Kontrolli</button>
             </div>
         </div>
@@ -51,7 +52,7 @@
                     <button class="vastuse-kast">21. juuli 1995</button>
                     <button class="vastuse-kast">4. september 1997</button>
                 </div>
-                <div><p id="vastus-2" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-2" class="vastuse-tekst"></p></div>
                 <button id="nupp-2">Kontrolli</button>
             </div>
         </div>
@@ -67,7 +68,7 @@
                     <button class="vastuse-kast">Keilas</button>
                     <button class="vastuse-kast">Pärnus</button>
                 </div>
-                <div><p id="vastus-3" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-3" class="vastuse-tekst"></p></div>
                 <button id="nupp-3">Kontrolli</button>
             </div>
         </div>
@@ -83,7 +84,7 @@
                     <button class="vastuse-kast">Gustav Adolfi Gümnaasium</button>
                     <button class="vastuse-kast">Tallinna Reaalkool</button>
                 </div>
-                <div><p id="vastus-4" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-4" class="vastuse-tekst"></p></div>
                 <button id="nupp-4">Kontrolli</button>
             </div>
         </div>
@@ -99,7 +100,7 @@
                     <button class="vastuse-kast">Ajakirjandus ja kommunikatsioon</button>
                     <button class="vastuse-kast">Muusika</button>
                 </div>
-                <div><p id="vastus-5" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-5" class="vastuse-tekst"></p></div>
                 <button id="nupp-5">Kontrolli</button>
             </div>
         </div>
@@ -115,7 +116,7 @@
                     <button class="vastuse-kast">Mina Ka</button>
                     <button class="vastuse-kast">Crème de la Crème</button>
                 </div>
-                <div><p id="vastus-6" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-6" class="vastuse-tekst"></p></div>
                 <button id="nupp-6">Kontrolli</button>
             </div>
         </div>
@@ -131,7 +132,7 @@
                     <button class="vastuse-kast">Mina ka</button>
                     <button class="vastuse-kast">Öölaps!</button>
                 </div>
-                <div><p id="vastus-7" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-7" class="vastuse-tekst"></p></div>
                 <button id="nupp-7">Kontrolli</button>
             </div>
         </div>
@@ -147,7 +148,7 @@
                     <button class="vastuse-kast">Reket</button>
                     <button class="vastuse-kast">5Miinust</button>
                 </div>
-                <div><p id="vastus-8" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-8" class="vastuse-tekst"></p></div>
                 <button id="nupp-8">Kontrolli</button>
             </div>
         </div>
@@ -163,7 +164,7 @@
                     <button class="vastuse-kast">Paisati müüki</button>
                     <button class="vastuse-kast">Muutis festivalialaks</button>
                 </div>
-                <div><p id="vastus-9" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-9" class="vastuse-tekst"></p></div>
                 <button id="nupp-9">Kontrolli</button>
             </div>
         </div>
@@ -179,7 +180,7 @@
                     <button class="vastuse-kast">Kosmos</button>
                     <button class="vastuse-kast">Universum</button>
                 </div>
-                <div><p id="vastus-10" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-10" class="vastuse-tekst"></p></div>
                 <button id="nupp-10">Kontrolli</button>
             </div>
         </div>
@@ -195,7 +196,7 @@
                     <button class="vastuse-kast">Ema tehtud lasanje</button>
                     <button class="vastuse-kast">Šnitsel</button>
                 </div>
-                <div><p id="vastus-11" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-11" class="vastuse-tekst"></p></div>
                 <button id="nupp-11">Kontrolli</button>
             </div>
         </div>
@@ -211,7 +212,7 @@
                     <button class="vastuse-kast">Vanaisa</button>
                     <button class="vastuse-kast">Õde</button>
                 </div>
-                <div><p id="vastus-12" style="color: white; text-shadow: none; margin: 0;"></p></div>
+                <div><p id="vastus-12" class="vastuse-tekst"></p></div>
                 <button id="nupp-12">Kontrolli</button>
             </div>
         </div>
@@ -220,10 +221,8 @@
         <div class="tulemuse-kast"></div>
 
         <!-- TAGASI -->
-        <div style="text-align:center; margin-top:0px; margin-bottom:50px;"><!--enne oli margin-top 40px, aga siis läks tulemuse kasti lisamisel see pikemaks, ma ei tea miks, aga ilma margin-topita näeb parem välja-->
-            <button
-                style="padding:15px 35px; font-size:22px; background-color:#F15BB5; color:white; border:none; cursor:pointer; text-shadow: none;"
-                onclick="window.location.href='pealeht.html'">
+        <div class="tagasi-nuppude-kast">
+            <button class ="tagasi-nupp" onclick="window.location.href='pealeht.html'">
                 Tagasi avalehele
             </button><!--lisasin siia, et ei oleks sellel nupul shadow, sest see nägi natuke veider välja-->
         </div>
@@ -231,7 +230,7 @@
     </div>
 </div>
 
-</body>
 <script src="script.js"></script> <!--skript tag viitab js-ile, mida validaatori direct input ei tea-->
+</body>
 </html>
 
