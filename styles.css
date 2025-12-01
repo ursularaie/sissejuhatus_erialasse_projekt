@@ -58,46 +58,6 @@ img {
     color: white;
 }
 
-#sisukord {
-    left: 0;
-    top: 0;
-    background-color: #64E9EE;
-    width: 200px;
-    height: 100%;
-    margin-right: 0px;
-    position: fixed;
-}
-
-#eluLink, #muusikaLink, #isiksusLink, #funfactsLink {
-    text-decoration: none;
-    color: black;
-    text-decoration: none;
-}
-
-#ulejaanud_leht {
-    margin-left: 220px;
-    padding: 10px;
-    height: 100%;
-}
-
-#pealkirja_all_pildid {
-    display: flex;
-    flex-direction: row;
-    gap: 60px;
-    margin-bottom: 10px;
-}
-
-#teise_loigu_pildid {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
-
-#pilt5 {
-    width: 200px;
-    height: 200px;
-}
-
 .mangu-konteiner {
     background-color: #64E9EE;
     padding: 40px 20px;
@@ -179,7 +139,7 @@ img {
     width: 100%;
 }
 
-.vastuse-kast.selected {
+.vastuse-kast.selected {/* see käib nii quiz kui lauluarvamise lehe kohta */
     background-color: #d3be36;
     border-color: #d3be33;
     text-shadow: 2px 2px #d0d0d0;
@@ -212,44 +172,5 @@ img {
     font-style: normal;
 }
 
-    color: white;
-}
-
-#pilt8 {
-    width: 200px;
-}
-
-#pilt9 {
-    height: 298.483px;
-}
-
-#funfactsList {
-    color: #64E9EE;
-    text-shadow: 1px 1px #ffffff;
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-
-#pilt10 {
-    margin-bottom: 40px;
-    color: white;
-}
-
-#pilt11 {
-    margin-bottom: 40px;
-    margin-left: 60px;
-    height: 183px;
-}
-
-#footerLingid {
-    text-shadow: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 7px;
-    padding-bottom: 10px;
-    color: white;
-}
-
-.footerLink {
     color: white;
 }
