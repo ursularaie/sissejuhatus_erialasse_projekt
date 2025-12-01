@@ -18,8 +18,6 @@ let song3 = songsQ[3][Math.floor(Math.random() * 3)];//kolmas laul randomiga
 let song4 = songsQ[4][Math.floor(Math.random() * 3)];//neljas laul randomiga
 let song5 = songsQ[5][Math.floor(Math.random() * 3)];//viies laul randomiga
 
-console.log(song1, song2, song3, song4, song5);
-
 let q1Answered = false;
 let q2Answered = false;
 let q3Answered = false;
@@ -39,7 +37,6 @@ function showResults() {
     }
     resBox.appendChild(butRes);
     butRes.onclick = (event) => { // arrow function
-        console.log(event);
         resBox.removeChild(butRes);//võtab ära nuppu ja asendab teksti kastiga, mis ütleb tulemuse
         let resText = document.createElement("p");
         resText.innerHTML = quizPoints + " / 12";
