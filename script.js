@@ -91,7 +91,7 @@ function selectAnswer(event) {
         }
         else {
             for (i in songsQ) {
-                if (i == 1) {
+                if (i == 1 && q1Answered) {
                     for (j in songsQ[i]) {
                         if (songsQ[i][j].includes(event.target.innerHTML)) {
                             q1Answered = false;
@@ -99,7 +99,7 @@ function selectAnswer(event) {
                         }
                     }
                 }
-                else if (i == 2) {
+                else if (i == 2 && q2Answered) {
                     for (j in songsQ[i]) {
                         if (songsQ[i][j].includes(event.target.innerHTML)) {
                             q2Answered = false;
@@ -107,7 +107,7 @@ function selectAnswer(event) {
                         }
                     }
                 }
-                else if (i == 3) {
+                else if (i == 3 && q3Answered) {
                     for (j in songsQ[i]) {
                         if (songsQ[i][j].includes(event.target.innerHTML)) {
                             q3Answered = false;
@@ -115,7 +115,7 @@ function selectAnswer(event) {
                         }
                     }
                 }
-                else if (i == 4) {
+                else if (i == 4 && q4Answered) {
                     for (j in songsQ[i]) {
                         if (songsQ[i][j].includes(event.target.innerHTML)) {
                             q4Answered = false;
@@ -123,7 +123,7 @@ function selectAnswer(event) {
                         }
                     }
                 }
-                else if (i == 5) {
+                else if (i == 5 && q5Answered) {
                     for (j in songsQ[i]) {
                         if (songsQ[i][j].includes(event.target.innerHTML)) {
                             q5Answered = false;
